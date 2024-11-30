@@ -1,6 +1,6 @@
 console.log("hello world");
 
-const API_URL = "https://api.thedogapi.com/v1/images/search?limit=3";
+const API_URL = "https://api.thedogapi.com/v1/images/search?limit=3&api_key=live_Uy3Pqxp9u5fLwZM7KhvVlaV7GGvyul8QKQze9fU4Q1qym2AD4b1wonrzK17h1Nuk";
 
   async function reload() {
     const res = await fetch(API_URL)
