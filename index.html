@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perros aleatorios</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Perros Aleatorios</title>
 </head>
 <body>
-    <h1>Perros aleatorios</h1>
-    <img id="img1"  width="400" height="600" alt="Foto Perros aleatorios">
-    <img id="img2"  width="400" height="600" alt="Foto Perros aleatorios">
-    <img id="img3"  width="400" height="600" alt="Foto Perros aleatorios">
-    <button onclick="reload()">Recargar</button>
-    <script src="./main.js"></script>
+  <h1>Doggo App</h1>
+
+  <section id="randomDogs">
+    <h2>Perros Aleatorios</h2>
+    <div class="grid-container">
+      <article>
+        <img id="dogImg1" alt="Foto perro aleatorio">
+        <button>Guardar perro en favoritos</button>
+      </article>
+
+      <article>
+        <img id="dogImg2" alt="Foto perro aleatorio">
+        <button>Guardar perro en favoritos</button>
+      </article>
+
+      <article>
+        <img id="dogImg3" alt="Foto perro aleatorio">
+        <button>Guardar perro en favoritos</button>
+      </article>
+    </div>
+    <button class="reload-button" onclick="reload()">Recargar</button>
+  </section>
+  
+  <section id="favoriteDogs">
+    <h2>Perros Favoritos</h2>
+    <div class="grid-container">
+      <article>
+        <img id="favoriteDogImg1" alt="Foto perro favorito">
+        <button>Quitar perro de favoritos</button>
+      </article>
+    </div>
+  </section>
+
+  <script src="./main.js"></script>
 </body>
 </html>
