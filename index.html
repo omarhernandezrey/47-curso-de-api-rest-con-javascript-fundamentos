@@ -12,6 +12,7 @@
 
   <section id="randomDogs">
     <h2>Perros Aleatorios</h2>
+    <span id="error"></span>
     <div class="grid-container">
       <article>
         <img id="dogImg1" alt="Foto perro aleatorio">
@@ -22,13 +23,8 @@
         <img id="dogImg2" alt="Foto perro aleatorio">
         <button>Guardar perro en favoritos</button>
       </article>
-
-      <article>
-        <img id="dogImg3" alt="Foto perro aleatorio">
-        <button>Guardar perro en favoritos</button>
-      </article>
     </div>
-    <button class="reload-button" onclick="reload()">Recargar</button>
+    <button class="reload-button" onclick="loadRamdomDogs()">Recargar</button>
   </section>
   
   <section id="favoriteDogs">
