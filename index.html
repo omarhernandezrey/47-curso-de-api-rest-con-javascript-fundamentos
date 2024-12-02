@@ -1,39 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
-  <title>Perros Aleatorios</title>
+  <title>Gatitos Aleatorios</title>
 </head>
 <body>
-  <h1>Doggo App</h1>
+  <h1>Michis App</h1>
 
-  <section id="randomDogs">
-    <h2>Perros Aleatorios</h2>
-    <span id="error"></span>
+  <span id="error"></span>
+
+  <!-- Sección de Michis Aleatorios -->
+  <section id="randomMichis">
+    <h2>Michis Aleatorios</h2>
     <div class="grid-container">
-      <article>
-        <img id="dogImg1" alt="Foto perro aleatorio">
-        <button>Guardar perro en favoritos</button>
+      <article class="card">
+        <img id="img1" src="https://source.unsplash.com/featured/?cat1" alt="Foto gatito aleatorio">
+        <button id="btn1" onclick="saveFavouriteMichis()">
+          Guardar michi en favoritos
+        </button>
       </article>
 
-      <article>
-        <img id="dogImg2" alt="Foto perro aleatorio">
-        <button>Guardar perro en favoritos</button>
+      <article class="card">
+        <img id="img2" src="https://source.unsplash.com/featured/?cat2" alt="Foto gatito aleatorio">
+        <button id="btn2" onclick="saveFavouriteMichis()">
+          Guardar michi en favoritos
+        </button>
       </article>
     </div>
-    <button class="reload-button" onclick="loadRamdomDogs()">Recargar</button>
+    <button class="reload-button" onclick="loadRandomMichis()">Recargar</button>
   </section>
-  
-  <section id="favoriteDogs">
-    <h2>Perros Favoritos</h2>
+
+  <!-- Sección de Michis Favoritos -->
+  <section id="favoritesMichis">
+    <h2>Michis Favoritos</h2>
     <div class="grid-container">
-      <article>
-        <img id="favoriteDogImg1" alt="Foto perro favorito">
-        <button>Quitar perro de favoritos</button>
+      <article class="card">
+        <img id="fav-img1" src="https://source.unsplash.com/featured/?cat3" alt="Foto gatito favorito">
+        <button class="remove-fav-button" onclick="removeFavouriteMichis()">
+          Sacar al michi de favoritos
+        </button>
       </article>
+      <!-- Puedes agregar más artículos de favoritos aquí -->
     </div>
   </section>
 

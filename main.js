@@ -1,43 +1,55 @@
-// URL de la API con un límite de 3 imágenes y una API Key válida
-const API_URL_RAMDOM = "https://api.thedogapi.com/v1/images/search?limit=2&api_key=live_Uy3Pqxp9u5fLwZM7KhvVlaV7GGvyul8QKQze9fU4Q1qym2AD4b1wonrzK17h1Nuk";
-const API_URL_FAVORITES = "https://api.thedogapi.com/v1/favourites?limit=2&api_key=live_Uy3Pqxp9u5fLwZM7KhvVlaV7GGvyul8QKQze9fU4Q1qym2AD4b1wonrzK17h1Nuk";
+const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=2&api_key=c08d415f-dea7-4a38-bb28-7b2188202e46';
+const API_URL_FAVOTITES = 'https://api.thecatapi.com/v1/favourites?api_key=c08d415f-dea7-4a38-bb28-7b2188202e46';
 
-const spanError = document.getElementById("error")
+const spanError = document.getElementById('error')
 
-
-async function loadRamdomDogs() {
-  const res = await fetch(API_URL_RAMDOM);
+async function loadRandomMichis() {
+  const res = await fetch(API_URL_RANDOM);
   const data = await res.json();
-  console.log('Random'); 
-  console.log(data); 
+  console.log('Random')
+  console.log(data)
 
-
-  if(res.status !==200) {
+  if (res.status !== 200) {
     spanError.innerHTML = "Hubo un error: " + res.status;
-  }else {
-    const img1 = document.getElementById("dogImg1");
-    const img2 = document.getElementById("dogImg2");
-  
+  } else {
+    const img1 = document.getElementById('img1');
+    const img2 = document.getElementById('img2');
+    
     img1.src = data[0].url;
     img2.src = data[1].url;
   }
 }
 
+async function loadFavouriteMichis() {
+  const res = await fetch(API_URL_FAVOTITES);
+  const data = await res.json();
+  console.log('Favoritos')
+  console.log(data)
 
-async function loadFavoritesDogs() {
-  
-    const res = await fetch(API_URL_FAVORITES);
-
-    const data = await res.json();
-    console.log('Favoritos');
-    
-    console.log(data); 
-    if(res.status !==200) {
-        spanError.innerHTML = "Hubo un error: " + res.status + data.message ;
-      }
-  
+  if (res.status !== 200) {
+    spanError.innerHTML = "Hubo un error: " + res.status + data.message;
   }
+}
 
+async function saveFavouriteMichis() {
+  const res = await fetch(API_URL_FAVOTITES, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      image_id: 'dje'
+    }),
+  });
+  const data = await res.json();
 
-loadRamdomDogs();
-loadFavoritesDogs();
+  console.log('Save')
+  console.log(res)
+
+  if (res.status !== 200) {
+    spanError.innerHTML = "Hubo un error: " + res.status + data.message;
+  }
+}
+
+loadRandomMichis();
+loadFavouriteMichis();
