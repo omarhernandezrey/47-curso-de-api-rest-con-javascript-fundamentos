@@ -1,50 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <title>Gatitos Aleatorios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gatitos aleatorios</title>
 </head>
 <body>
   <h1>Michis App</h1>
 
   <span id="error"></span>
 
-  <!-- Sección de Michis Aleatorios -->
   <section id="randomMichis">
-    <h2>Michis Aleatorios</h2>
-    <div class="grid-container">
-      <article class="card">
-        <img id="img1" src="https://source.unsplash.com/featured/?cat1" alt="Foto gatito aleatorio">
-        <button id="btn1" onclick="saveFavouriteMichis()">
-          Guardar michi en favoritos
-        </button>
-      </article>
+    <h2>Michis aleatorios</h2>
 
-      <article class="card">
-        <img id="img2" src="https://source.unsplash.com/featured/?cat2" alt="Foto gatito aleatorio">
-        <button id="btn2" onclick="saveFavouriteMichis()">
-          Guardar michi en favoritos
-        </button>
-      </article>
-    </div>
-    <button class="reload-button" onclick="loadRandomMichis()">Recargar</button>
+    <article>
+      <img id="img1" width="150" alt="Foto gatito aleatorio">
+      <button id="btn1">
+        Guardar michi en favoritos
+      </button>
+    </article>
+
+    <article>
+      <img id="img2" width="150" alt="Foto gatito aleatorio">
+      <button id="btn2">
+        Guardar michi en favoritos
+      </button>
+    </article>
+    
+
+    <button onclick="loadRandomMichis()">Recargar</button>
   </section>
+  
+  <section id="favoriteMichis">
+    <h2>Michis favoritos</h2>
 
-  <!-- Sección de Michis Favoritos -->
-  <section id="favoritesMichis">
-    <h2>Michis Favoritos</h2>
-    <div class="grid-container">
-      <article class="card">
-        <img id="fav-img1" src="https://source.unsplash.com/featured/?cat3" alt="Foto gatito favorito">
-        <button class="remove-fav-button" onclick="removeFavouriteMichis()">
-          Sacar al michi de favoritos
-        </button>
-      </article>
-      <!-- Puedes agregar más artículos de favoritos aquí -->
-    </div>
+    <article>
+      <img id="img1" width="150" alt="Foto gatito aleatorio">
+      <button>Sacar al michi de favoritos</button>
+    </article>
   </section>
 
   <script src="./main.js"></script>
