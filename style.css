@@ -1,214 +1,164 @@
-/* Variables CSS para una fácil personalización */
-:root {
-  --primary-gradient: linear-gradient(to right, #6a11cb, #2575fc);
-  --secondary-gradient: linear-gradient(to right, #ff6a00, #ee0979);
-  --button-hover-gradient: linear-gradient(to right, #ee0979, #ff6a00);
-  --button-active-gradient: linear-gradient(to right, #d80000, #c90065);
-  --reload-gradient: linear-gradient(to right, #43cea2, #185a9d);
-  --reload-hover-gradient: linear-gradient(to right, #185a9d, #43cea2);
-  --text-color: #ffffff;
-  --error-color: #ff4d4d;
-  --background-overlay: rgba(255, 255, 255, 0.1);
-  --box-shadow: rgba(0, 0, 0, 0.2);
-  --article-shadow: rgba(0, 0, 0, 0.3);
-  --card-background: #ffffff;
-  --card-border-radius: 15px;
-  --transition-duration: 0.3s;
-}
+/* Estilos avanzados para una experiencia futurista y responsiva */
 
-/* Reset básico para eliminar márgenes y paddings predeterminados */
-* {
+/* General */
+body {
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Estilo general */
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--primary-gradient);
-  color: var(--text-color);
-  text-align: center;
-  overflow-x: hidden;
-  min-height: 100vh;
-}
-
-/* Encabezados */
-h1 {
-  font-size: 3rem;
-  color: var(--text-color);
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-  margin: 30px 0;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: var(--text-color);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Mensaje de error */
-span#error {
-  color: var(--error-color);
-  font-weight: bold;
-  display: block;
-  margin: 15px 0;
-}
-
-/* Contenedores principales */
-section {
-  margin: 20px auto;
-  max-width: 1400px;
-  padding: 20px;
-  border-radius: var(--card-border-radius);
-  background-color: var(--background-overlay);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 15px var(--box-shadow);
-}
-
-/* Contenedor de artículos en grid */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  align-items: start;
-  margin-top: 20px;
-}
-
-/* Artículos de michis (cards) */
-.card {
-  background-color: var(--card-background);
-  border-radius: var(--card-border-radius);
-  box-shadow: 0 4px 10px var(--article-shadow);
-  overflow: hidden;
-  width: 100%;
-  max-width: 350px;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+  text-align: center;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+h1, h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 20px 0;
 }
 
-/* Imágenes de los michis */
-.card img {
-  width: auto;
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 3px solid #ff6a00;
-  display: block;
-  margin: 0 auto;
-  max-width: 80%; /* Ajuste para centrar la imagen y evitar que se estire */
-  border-top-left-radius: var(--card-border-radius);
-  border-top-right-radius: var(--card-border-radius);
+/* Grid para las cards */
+section {
+  width: 90%;
+  margin: 20px auto;
 }
 
-/* Botones */
-button {
-  padding: 12px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  background: var(--secondary-gradient);
-  color: var(--text-color);
-  cursor: pointer;
-  transition: background var(--transition-duration) ease, transform 0.2s ease;
-  margin: 15px 0;
+#randomMichis, #favoriteMichis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
 }
 
-button:hover {
-  background: var(--button-hover-gradient);
+/* Cards */
+article {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+article:hover {
   transform: scale(1.05);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-button:active {
-  transform: scale(0.95);
-  background: var(--button-active-gradient);
+/* Imágenes dentro de las cards */
+img {
+  border-radius: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 /* Botón de recargar */
-.reload-button {
-  margin-top: 30px;
-  font-size: 1.2rem;
-  padding: 15px 30px;
-  background: var(--reload-gradient);
+#randomMichis > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #4caf50, #8bc34a);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 50%; /* Botón redondo */
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(72, 239, 128, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100px; /* Tamaño inicial */
+  height: 100px;
+  animation: rotate 2s infinite linear; /* Contenedor rotando */
+}
+
+#randomMichis > button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(72, 239, 128, 0.7);
+}
+
+#randomMichis > button:active {
+  transform: scale(0.95);
+}
+
+/* Icono del botón */
+#randomMichis > button::before {
+  content: '🔄';
+  font-size: 24px;
+  display: inline-block;
+}
+
+/* Animación del contenedor y el icono */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ajustes para pantallas de escritorio */
+@media (min-width: 1024px) {
+  #randomMichis > button {
+    width: 60px; /* Botón más pequeño en escritorio */
+    height: 60px;
+    font-size: 14px;
+  }
+
+  #randomMichis > button::before {
+    font-size: 18px;
+  }
+}
+
+/* Formulario de carga */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="file"] {
+  margin: 10px 0;
+  padding: 5px;
+  border: 2px dashed #fff;
   border-radius: 10px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.reload-button:hover {
-  background: var(--reload-hover-gradient);
+button[type="button"] {
+  margin-top: 10px;
 }
 
-/* Botón de sacar favorito */
-.remove-fav-button {
-  background: #ff6a00;
-}
-
-.remove-fav-button:hover {
-  background: #ee0979;
-}
-
-.remove-fav-button:active {
-  background: #c90065;
-}
-
-/* Diseño responsivo */
-@media (min-width: 1200px) {
-  .grid-container {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 59px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  /* Ajustes específicos para desktop */
-  .card img {
-    max-width: 100%;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  .grid-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-}
-
-@media (max-width: 767px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
+/* Responsividad */
+@media (max-width: 600px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.2rem;
+  }
+
+  article {
+    padding: 10px;
   }
 
   button {
-    width: 80%;
-    padding: 10px;
-    font-size: 1rem;
+    font-size: 14px;
+    padding: 8px 15px;
   }
 
-  .card img {
-    max-width: 100%;
+  img {
+    max-width: 150px;
   }
 }
